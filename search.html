@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Search - laserplotters.github.io</title><meta name="robots" content="noindex, follow"><link rel="alternate" type="application/atom+xml" href="https://laserplotters.github.io/feed.xml" title="laserplotters.github.io - RSS"><link rel="alternate" type="application/json" href="https://laserplotters.github.io/feed.json" title="laserplotters.github.io - JSON"><meta property="og:title" content="laserplotters.github.io"><meta property="og:image" content="https://laserplotters.github.io/media/website/LOGO.png"><meta property="og:image:width" content="387"><meta property="og:image:height" content="334"><meta property="og:site_name" content="laserplotters.github.io"><meta property="og:description" content="Laser Machines"><meta property="og:url" content="https://laserplotters.github.io/"><meta property="og:type" content="website"><link rel="stylesheet" href="https://laserplotters.github.io/assets/css/style.css?v=325ba8f8f4f32f8ac4585f3506140e98"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"laserplotters.github.io","logo":"https://laserplotters.github.io/media/website/LOGO.png","url":"https://laserplotters.github.io/"}</script><noscript><style>img[loading] {
+                    opacity: 1;
+                }</style></noscript></head><body class="search-template"><header class="header" id="js-header"><a href="https://laserplotters.github.io/" class="logo"><img src="https://laserplotters.github.io/media/website/LOGO.png" alt="laserplotters.github.io" width="387" height="334"></a><nav class="navbar js-navbar"><button class="navbar__toggle js-toggle" aria-label="Menu"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://laserplotters.github.io/" target="_self">Home</a></li><li><a href="https://laserplotters.github.io/tags/products/" target="_self">Products</a></li><li><a href="https://laserplotters.github.io/contact.html" target="_self">Contact</a></li></ul></nav><div class="search"><div class="search__overlay js-search-overlay"><form action="https://laserplotters.github.io/search.html" class="search__form"><input class="search__input" type="search" name="q" placeholder="search..." aria-label="search..." autofocus required> <button type="submit" class="search__button"><span>Submit</span></button></form></div><button class="search__btn js-search-btn" aria-label="Search"><svg role="presentation" focusable="false" height="18" width="18"><use xlink:href="https://laserplotters.github.io/assets/svg/svg-map.svg#search"/></svg></button></div></header><main><div class="wrapper page page--search"><div class="hero"><h1>Search</h1></div><div class="post__inner"><form action="https://laserplotters.github.io/search.html" class="search-page-form"><input type="search" name="q" placeholder="search..." class="search-page-input" required> <button type="submit" class="search-page-button"><span>Submit</span></button></form><div id="search-results"></div><script>(async function () {
+				console.log("./feed.json");
+				console.log("q");
+			  
+				let url = "./feed.json";
+				let response = await fetch(url);
+				let jsonData = await response.json();
+			  
+				const params = new URLSearchParams(window.location.search)
+				let searchTerm = params.get("q");
+				let results = [];
+			  
+				jsonData.items.forEach((item) => {
+				  let title = item.title.toLowerCase();
+				  let url = item.url;
+			  
+				  if (title.includes(searchTerm.toLowerCase())) {
+					results.push(item);
+				  }
+				});
+			  
+				let elm = document.querySelector("#search-results");
+				if (results.length > 0) {
+				  results.forEach((result)=>{
+					console.log(result);
+					
+					let tagsHTML = '';
+					if (result.tags && result.tags.length > 0) {
+						tagsHTML = '<div style="margin: 0.5rem 0 0.8rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">';
+						result.tags.forEach(tag => {
+							tagsHTML += '<span style="display: inline-block; padding: 0.3rem 0.8rem; background-color: #f0f0f0; color: #555; border-radius: 15px; font-size: 0.85rem; font-weight: 600; border: 1.5px solid #ddd;">' + tag + '</span>';
+						});
+						tagsHTML += '</div>';
+					}
+
+					elm.innerHTML += '<div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee;"><h5 style="margin: 0 0 0.3rem 0;"><a href="'+ result.url +'" style="color: #2c3e50; text-decoration: none; font-size: 1.25rem; font-weight: 600;">' + result.title + '</a></h5>' + tagsHTML + '<p style="color: #666; margin: 0; line-height: 1.6;">' + result.summary + '</p></div>';
+				  });
+				} else {
+				  elm.innerHTML = '<p>No Results Found</p>';
+				}
+			  })();</script></div></div></main><footer class="footer"><div class="footer__copyright">Powered by TIM‘s Laser</div></footer><script>window.themeMenuConfig = {    
+      mobileMenuMode: 'sidebar',
+      animationSpeed: 300,
+      submenuWidth: 'auto',
+      doubleClickTime: 500,
+      mobileMenuExpandableSubmenus: true, 
+      relatedContainerForOverlayMenuSelector: '.navbar',
+   };</script><script defer="defer" src="https://laserplotters.github.io/assets/js/scripts.min.js?v=1b09dc64eb6086ddc9720890661ff038"></script><script>var images = document.querySelectorAll('img[loading]');
+
+      for (var i = 0; i < images.length; i++) {
+         if (images[i].complete) {
+               images[i].classList.add('is-loaded');
+         } else {
+               images[i].addEventListener('load', function () {
+                  this.classList.add('is-loaded');
+               }, false);
+         }
+      }</script><button id="scrollTopBtn" title="回到顶部">↑</button><script>document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.getElementById("scrollTopBtn");
+
+  // 初始检查
+  if (window.scrollY > 200) {
+    btn.classList.add("show");
+  } else {
+    btn.classList.remove("show");
+  }
+
+  // 滚动时显示/隐藏
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 200) {
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+  });
+
+  // 点击回到顶部
+  btn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});</script><script>// 改进翻页显示
+document.addEventListener('DOMContentLoaded', function() {
+    const pagination = document.querySelector('.pagination');
+    
+    if (pagination) {
+        const links = pagination.querySelectorAll('a');
+        
+        if (links.length > 0) {
+            const currentURL = window.location.pathname;
+            const currentHREF = window.location.href;
+            let currentPage = 1;
+            
+            const isHomePage = (currentURL === '/' || 
+                              currentURL === '/index.html' || 
+                              currentHREF.endsWith('/preview/index.html') ||
+                              currentHREF.endsWith('/preview/')) &&
+                              !currentURL.includes('/page/') && 
+                              !currentURL.includes('/tags/');
+            
+            if (isHomePage) {
+                pagination.style.display = 'none';
+                return;
+            }
+            
+            const match = currentURL.match(/page\/(\d+)/);
+            if (match) {
+                currentPage = parseInt(match[1]);
+            }
+            
+            let totalPages = currentPage;
+            
+            links.forEach(link => {
+                const pageMatch = link.href.match(/page\/(\d+)/);
+                if (pageMatch) {
+                    const pageNum = parseInt(pageMatch[1]);
+                    if (pageNum > totalPages) {
+                        totalPages = pageNum;
+                    }
+                }
+                if (!link.href.includes('/page/') && totalPages < 1) {
+                    totalPages = 1;
+                }
+            });
+            
+            const hasPreviousLink = Array.from(links).some(link => 
+                link.textContent.trim().toLowerCase() === 'previous' || 
+                link.textContent.trim() === '上一页'
+            );
+            
+            if (hasPreviousLink) {
+                const prevLink = Array.from(links).find(link => 
+                    link.textContent.trim().toLowerCase() === 'previous' || 
+                    link.textContent.trim() === '上一页'
+                );
+                if (prevLink) {
+                    const nextPageMatch = prevLink.href.match(/page\/(\d+)/);
+                    if (nextPageMatch) {
+                        const nextPage = parseInt(nextPageMatch[1]);
+                        totalPages = Math.max(totalPages, nextPage);
+                    }
+                }
+            }
+            
+            if (totalPages <= 1 && currentPage === 1) {
+                pagination.style.display = 'none';
+                return;
+            }
+            
+            const newPagination = document.createElement('div');
+            newPagination.className = 'pagination-numbers';
+            newPagination.style.cssText = 'display: flex; justify-content: center; gap: 0.5rem; margin: 2rem 0; align-items: center;';
+            
+            const isLocal = window.location.protocol === 'file:';
+            let basePath = '';
+            
+            if (isLocal) {
+                basePath = window.location.href
+                    .replace(/\/[^\/]*$/, '')
+                    .replace(/\/page\/\d+/, '');
+            } else {
+                const pathParts = currentURL.split('/');
+                const pageIndex = pathParts.indexOf('page');
+                if (pageIndex > -1) {
+                    basePath = pathParts.slice(0, pageIndex).join('/');
+                } else {
+                    basePath = currentURL.replace(/\/[^\/]*$/, '');
+                }
+            }
+            
+            if (currentPage > 1) {
+                const prevBtn = document.createElement('a');
+                if (currentPage === 2) {
+                    prevBtn.href = isLocal ? basePath + '/index.html' : basePath + (basePath.endsWith('/') ? '' : '/');
+                } else {
+                    prevBtn.href = isLocal ? 
+                        basePath + '/page/' + (currentPage - 1) + '/index.html' : 
+                        basePath + '/page/' + (currentPage - 1) + '/';
+                }
+                prevBtn.textContent = '←';
+                prevBtn.className = 'btn pagination-btn';
+                prevBtn.style.cssText = 'padding: 0.6rem 1rem; text-decoration: none; font-size: 1.2rem; min-width: 45px; text-align: center; border-radius: 18px;';
+                newPagination.appendChild(prevBtn);
+            }
+            
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('a');
+                
+                if (i === 1) {
+                    pageBtn.href = isLocal ? basePath + '/index.html' : basePath + (basePath.endsWith('/') ? '' : '/');
+                } else {
+                    pageBtn.href = isLocal ? 
+                        basePath + '/page/' + i + '/index.html' : 
+                        basePath + '/page/' + i + '/';
+                }
+                
+                pageBtn.textContent = i;
+                
+                if (i === currentPage) {
+                    pageBtn.className = 'btn pagination-current';
+                    pageBtn.style.cssText = 'padding: 0.6rem 1rem; text-decoration: none; font-size: 1.2rem; min-width: 45px; text-align: center; background-color: #FFD700 !important; color: #000 !important; border-color: #FFD700 !important; font-weight: bold; pointer-events: none; border-radius: 18px; box-shadow: 0 4px 16px rgba(255, 215, 0, 0.4);';
+                } else {
+                    pageBtn.className = 'btn';
+                    pageBtn.style.cssText = 'padding: 0.6rem 1rem; text-decoration: none; font-size: 1.2rem; min-width: 45px; text-align: center; border-radius: 18px;';
+                }
+                
+                newPagination.appendChild(pageBtn);
+            }
+            
+            if (currentPage < totalPages) {
+                const nextBtn = document.createElement('a');
+                nextBtn.href = isLocal ? 
+                    basePath + '/page/' + (currentPage + 1) + '/index.html' : 
+                    basePath + '/page/' + (currentPage + 1) + '/';
+                nextBtn.textContent = '→';
+                nextBtn.className = 'btn pagination-btn';
+                nextBtn.style.cssText = 'padding: 0.6rem 1rem; text-decoration: none; font-size: 1.2rem; min-width: 45px; text-align: center; border-radius: 18px;';
+                newPagination.appendChild(nextBtn);
+            }
+            
+            pagination.parentNode.replaceChild(newPagination, pagination);
+        }
+    }
+});</script><script>document.addEventListener('DOMContentLoaded', function() {
+    var searchInputs = document.querySelectorAll('input[placeholder="search..."]');
+    searchInputs.forEach(function(input) {
+        input.placeholder = 'Input Keyword / 输入关键词';
+    });
+    
+    var heroH1 = document.querySelector('.hero h1');
+    if (heroH1 && heroH1.textContent.trim() === 'Search') {
+        heroH1.textContent = 'Search/搜索';
+    }
+    
+    var submitButtons = document.querySelectorAll('.search__button span, .search-page-button span');
+    submitButtons.forEach(function(span) {
+        if (span.textContent.trim() === 'Submit') {
+            span.textContent = '🔍';
+        }
+    });
+});</script><style>.search__button span,
+.search-page-button span {
+    font-size: 18px;
+}</style></body></html>
